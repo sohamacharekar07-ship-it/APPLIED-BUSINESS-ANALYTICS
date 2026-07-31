@@ -1,0 +1,82 @@
+2. Describing the Distribution of a Variable:
+a. Obtain a dataset and calculate descriptive statistics (mean, median, mode,
+variance, etc.) for a specific variable of interest.
+CODE:
+Import Required Libraries
+import pandas as pd
+Load Dataset
+df = pd.read_csv("Sample - Superstore.csv", encoding="latin1")
+Display First 5 rows
+print(df.head())
+OUTPUT:
+
+SALES
+sales = df["Profit"]
+DISPLAY  MEAN
+print("Mean :", sales.mean())
+OUTPUT:
+
+DISPLAY  MEDIAN
+print("Median :", sales.median())
+OUTPUT:
+
+DISPLAY  MODE
+print("Mode :")
+print(sales.mode())
+OUTPUT:
+
+DISPLAY  MINIMUM
+print("Minimum :", sales.min())
+OUTPUT:
+
+DISPLAY  MAXIMUM
+print("Maximum :", sales.max())
+OUTPUT:
+
+DISPLAY  RANGE
+print("Range :", sales.max() - sales.min())
+OUTPUT:
+
+DISPLAY  VARIANCE
+print("Variance :", sales.var())
+OUTPUT:
+
+DISPLAY  Standard Deviation
+print("Standard Deviation :", sales.std())
+OUTPUT:
+
+DISPLAY  COUNT
+print("Count :", sales.count())
+
+OUTPUT:
+
+DISPLAY  SUM
+print("Sum :", sales.sum())
+OUTPUT:
+
+DESCRIPTIVE STATISTICS
+print("\nDescriptive Statistics")
+print(sales.describe())
+OUTPUT:
+
+b. Create visualizations (histograms, box plots) to depict the distribution of a
+variable and analyze its characteristics.
+CODE:
+import matplotlib.pyplot as plt
+import seaborn as sns
+plt.figure(figsize=(8,5))
+plt.hist(sales, bins=10, color="skyblue", edgecolor="black")
+plt.title("Histogram of Sales")
+plt.xlabel("Sales")
+plt.ylabel("Frequency")
+plt.show()
+OUTPUT:
+
+CODE:
+plt.figure(figsize=(8,3))
+sns.boxplot(x=sales, color="orange")
+plt.title("Box Plot of Sales")
+plt.xlabel("Sales")
+plt.show()
+OUTPUT:
+
